@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kho Phim Ếch - Tổng Hợp Phim Ếch Chất Lượng Cao</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        min-height: 100vh;
+        /* Nền xanh lá cây gradient */
+        background: linear-gradient(135deg, #052e16, #166534, #022c22);
+        color: #fff;
+        position: relative;
+    }
+
+    /* Hiệu ứng nền */
+    body::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(circle at 50% 50%, rgba(74, 222, 128, 0.1) 0%, transparent 70%);
+        z-index: -1;
+    }
+
+    header {
+        text-align: center;
+        padding: 60px 20px;
+    }
+
+    header h1 {
+        font-size: 50px;
+        margin-bottom: 15px;
+        /* Bóng chữ xanh lá */
+        text-shadow: 0 0 25px #4ade80;
+    }
+
+    header p {
+        color: #d1d5db;
+        font-size: 20px;
+    }
+
+    .packages {
+        width: 90%;
+        max-width: 1400px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 40px;
+        padding-bottom: 80px;
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(15px);
+        border-radius: 30px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: 0.4s ease-in-out;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .card:hover {
+        transform: translateY(-20px) scale(1.02);
+        /* Bóng đổ và viền khi hover màu xanh lá */
+        box-shadow: 0 25px 50px rgba(74, 222, 128, 0.3);
+        border: 1px solid rgba(74, 222, 128, 0.5);
+    }
+
+    .card img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        border-bottom: 3px solid #4ade80;
+    }
+
+    .info {
+        padding: 30px;
+    }
+
+    .info h2 {
+        margin-bottom: 15px;
+        font-size: 32px;
+        color: #f9fafb;
+    }
+
+    .info p {
+        color: #e5e7eb;
+        margin-bottom: 25px;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .badge {
+        display: inline-block;
+        /* Nút màu xanh lá */
+        background: #4ade80;
+        color: #064e3b;
+        padding: 10px 22px;
+        border-radius: 40px;
+        font-weight: bold;
+        font-size: 15px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    /* Style cho nút điều khiển nhạc */
+    #music-control {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        color: #fff;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.3s;
+        z-index: 1000;
+        font-size: 20px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    #music-control:hover {
+        background: #4ade80;
+        color: #064e3b;
+    }
+
+    @media (max-width: 768px) {
+        header h1 { font-size: 36px; }
+        header p { font-size: 16px; }
+        .packages { grid-template-columns: 1fr; gap: 25px; }
+        .card img { height: 220px; }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>🐸 KHO PHIM ẾCH VIP</h1>
+    <p>Tuyển tập các thước phim ếch đặc sắc.</p>
+</header>
+
+<div class="packages">
+    <!-- Phim Ếch số 1 -->
+    <div class="card" onclick="window.location.href='phim1.html'">
+        <img src="https://i.ibb.co/9mvbgZYg/f84c40056d7c472aa74619de83b3f1e21728460793.jpg" alt="Phim Ếch: Chuyến phiêu lưu kỳ thú">
+        <div class="info">
+            <h2>🍃 PHIM ẾCH: CHUYẾN PHIÊU LƯU KỲ THÚ</h2>
+            <p>Hành trình của chú ếch nhỏ dũng cảm khám phá thế giới bên ngoài ao làng.</p>
+            <span class="badge">XEM NGAY</span>
+        </div>
+    </div>
+
+    <!-- Phim Ếch số 2 -->
+    <div class="card" onclick="window.location.href='phim2.html'">
+        <img src="https://i.ibb.co/mr3JqWmB/2game-logo-garena-free-fire-mobile.png" alt="Phim Ếch: Vũ điệu đầm lầy">
+        <div class="info">
+            <h2>🍃 PHIM ẾCH: VŨ ĐIỆU ĐẦM LẦY</h2>
+            <p>Những thước phim tài liệu về cuộc sống sinh tồn và sinh sản của loài ếch xanh.</p>
+            <span class="badge">XEM NGAY</span>
+        </div>
+    </div>
+
+    <!-- Phim Ếch số 3 -->
+    <div class="card" onclick="window.location.href='phim3.html'">
+        <img src="https://i.ibb.co/yFmLb583/unnamed.png" alt="Phim Ếch: Biệt đội diệt muỗi">
+        <div class="info">
+            <h2>🍃 PHIM ẾCH: BIỆT ĐỘI DIỆT MUỖI</h2>
+            <p>Bộ phim hoạt hình hài hước về các siêu anh hùng ếch bảo vệ khu vườn.</p>
+            <span class="badge">XEM NGAY</span>
+        </div>
+    </div>
+</div>
+
+<!-- Nút Bật/Tắt Nhạc -->
+<div id="music-control" onclick="toggleMusic()">
+    🎵
+</div>
+
+<!-- Thẻ Audio -->
+<audio id="bg-music" loop autoplay>
+    <!-- Thay đổi liên kết này thành tệp nhạc thực tế của bạn -->
+    <!-- <source src="link-nhac-cua-ban.mp3" type="audio/mpeg"> -->
+    <!-- Nhạc mặc định (lấy từ nguồn công cộng ví dụ) -->
+    <source src="https://www.soundjay.com/nature/sounds/rain-05.mp3" type="audio/mpeg">
+    Trình duyệt của bạn không hỗ trợ thẻ audio.
+</audio>
+
+<script>
+    var music = document.getElementById("bg-music");
+    var musicControl = document.getElementById("music-control");
+
+    // Tự động phát khi tải trang
+    window.onload = function() {
+        music.volume = 0.5; // Đặt âm lượng 50%
+        music.play().catch(function(error) {
+            console.log("Trình duyệt chặn tự động phát nhạc: " + error);
+            musicControl.innerHTML = '🔇'; // Hiện biểu tượng tắt nhạc
+        });
+    };
+
+    // Chức năng Bật/Tắt nhạc
+    function toggleMusic() {
+        if (music.paused) {
+            music.play();
+            musicControl.innerHTML = '🎵';
+        } else {
+            music.pause();
+            musicControl.innerHTML = '🔇';
+        }
+    }
+</script>
+
+</body>
+</html>
