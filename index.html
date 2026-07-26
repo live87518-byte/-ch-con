@@ -229,8 +229,9 @@
 </header>
 
 <div class="packages">
-    <div class="card" onclick="openPopup('Phim Ếch: Chuyến phiêu lưu kỳ thú', 'Bạn đã chọn gói xem phim: Chuyến phiêu lưu kỳ thú. Nhấn xác nhận để vào phòng chiếu!')">
-        <img src="https://i.ibb.co/9mvbgZYg/f84c40056d7c472aa74619de83b3f1e21728460793.jpg" alt="Phim Ếch">
+    <!-- Phim Ếch số 1: Thay thế 'https://example.com/phim1' bằng URL của bạn -->
+    <div class="card" onclick="openPopup('Phim Ếch: Chuyến phiêu lưu kỳ thú', 'Bạn sắp chuyển hướng đến liên kết ngoài cho tập 1!', 'https://example.com/phim1')">
+        <img src="https://i.ibb.co/9mvbgZYg/f84c40056d7c472aa74619de83b3f1e21728460793.jpg" alt="Phim Ếch 1">
         <div class="info">
             <h2>🍃 PHIM ẾCH: CHUYẾN PHIÊU LƯU</h2>
             <p>Hành trình của chú ếch nhỏ dũng cảm khám phá thế giới bên ngoài ao làng.</p>
@@ -238,8 +239,9 @@
         </div>
     </div>
 
-    <div class="card" onclick="openPopup('Phim Ếch: Vũ điệu đầm lầy', 'Bạn đã chọn gói xem phim: Vũ điệu đầm lầy. Nhấn xác nhận để vào phòng chiếu!')">
-        <img src="https://i.ibb.co/mr3JqWmB/2game-logo-garena-free-fire-mobile.png" alt="Phim Ếch">
+    <!-- Phim Ếch số 2: Thay thế 'https://example.com/phim2' bằng URL của bạn -->
+    <div class="card" onclick="openPopup('Phim Ếch: Vũ điệu đầm lầy', 'Bạn sắp chuyển hướng đến liên kết ngoài cho tập 2!', 'https://example.com/phim2')">
+        <img src="https://i.ibb.co/mr3JqWmB/2game-logo-garena-free-fire-mobile.png" alt="Phim Ếch 2">
         <div class="info">
             <h2>🍃 PHIM ẾCH: VŨ ĐIỆU ĐẦM LẦY</h2>
             <p>Những thước phim tài liệu về cuộc sống sinh tồn và sinh sản của loài ếch xanh.</p>
@@ -247,8 +249,9 @@
         </div>
     </div>
 
-    <div class="card" onclick="openPopup('Phim Ếch: Biệt đội diệt muỗi', 'Bạn đã chọn gói xem phim: Biệt đội diệt muỗi. Nhấn xác nhận để vào phòng chiếu!')">
-        <img src="https://i.ibb.co/yFmLb583/unnamed.png" alt="Phim Ếch">
+    <!-- Phim Ếch số 3: Thay thế 'https://example.com/phim3' bằng URL của bạn -->
+    <div class="card" onclick="openPopup('Phim Ếch: Biệt đội diệt muỗi', 'Bạn sắp chuyển hướng đến liên kết ngoài cho tập 3!', 'https://example.com/phim3')">
+        <img src="https://i.ibb.co/yFmLb583/unnamed.png" alt="Phim Ếch 3">
         <div class="info">
             <h2>🍃 PHIM ẾCH: BIỆT ĐỘI DIỆT MUỖI</h2>
             <p>Bộ phim hoạt hình hài hước về các siêu anh hùng ếch bảo vệ khu vườn.</p>
@@ -257,6 +260,7 @@
     </div>
 </div>
 
+<!-- Hộp Popup Thông Báo -->
 <div class="popup" id="popupModal">
     <div class="box">
         <h2 id="popupTitle">Thông Báo</h2>
@@ -266,10 +270,12 @@
     </div>
 </div>
 
+<!-- Nút Bật/Tắt Nhạc -->
 <div id="music-control" onclick="toggleMusic()">
     🎵
 </div>
 
+<!-- Thẻ Audio -->
 <audio id="bg-music" loop>
     <source src="https://www.soundjay.com/nature/sounds/rain-05.mp3" type="audio/mpeg">
     Trình duyệt của bạn không hỗ trợ thẻ audio.
@@ -281,6 +287,8 @@
     var popupModal = document.getElementById("popupModal");
     var popupTitle = document.getElementById("popupTitle");
     var popupDesc = document.getElementById("popupDesc");
+    
+    var currentRedirectUrl = "";
 
     // Tự động phát nhạc khi người dùng tương tác lần đầu với trang web
     document.body.addEventListener('click', function() {
@@ -292,10 +300,11 @@
         }
     }, { once: true });
 
-    // Mở Popup
-    function openPopup(title, desc) {
+    // Mở Popup kèm theo URL riêng của phim đó
+    function openPopup(title, desc, url) {
         popupTitle.innerText = title;
         popupDesc.innerText = desc;
+        currentRedirectUrl = url;
         popupModal.style.display = "flex";
     }
 
@@ -304,10 +313,11 @@
         popupModal.style.display = "none";
     }
 
-    // Hành động khi nhấn nút xác nhận trong popup
+    // Khi bấm xác nhận sẽ chuyển đến URL tương ứng
     function actionSuccess() {
-        alert("Đã kết nối thành công tới máy chủ phim ếch!");
-        closePopup();
+        if (currentRedirectUrl) {
+            window.location.href = currentRedirectUrl;
+        }
     }
 
     // Bật/Tắt nhạc nền thủ công qua nút góc màn hình
